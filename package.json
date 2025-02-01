@@ -2,7 +2,9 @@
   "name": "@tests-is/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
@@ -15,6 +17,6 @@
     "typescript": "~5.7.2"
   },
   "workspaces": [
-    "packages/**/*"
+    "packages/*"
   ]
 }
