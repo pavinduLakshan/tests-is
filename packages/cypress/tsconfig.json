@@ -1,12 +1,15 @@
 {
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
       "outDir": "dist",
-      "rootDir": "src",
+      "rootDir": "./",
+      "baseUrl": "./",
       "module": "NodeNext",
       "target": "ES6",
       "declaration": true,
       "esModuleInterop": true,
-      "moduleResolution": "nodenext"
+      "moduleResolution": "nodenext",
+      "lib": ["dom"]
     },
     "exclude": [
         "node_modules", "mocha", "dist"

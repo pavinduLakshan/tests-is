@@ -15,6 +15,10 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022"
-  }
+    "target": "es2022",
+    "paths": {
+        "@wso2iam/test-ts-core/configs": ["packages/core/configs"],
+        "@wso2iam/test-ts-core/constants": ["packages/core/constants"]
+    }
+  },
 }

@@ -4,7 +4,6 @@
   "description": "Cypress utilities for implementing tests for the WSO2 IAM platform",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rm -rf node_modules dist"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +12,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "cypress": "^14.0.1"
+    "cypress": "^14.0.1",
+    "@wso2iam/test-ts-core": "workspace:*"
   }
 }
