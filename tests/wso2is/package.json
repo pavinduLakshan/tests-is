@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@wso2iam/test-cypress-core": "workspace:*",
     "cypress": "^14.0.1",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@wso2iam/test-ts-core": "workspace:^"
   }
 }

@@ -51,7 +51,14 @@ importers:
         version: 5.7.3
 
   tests/wso2is:
+    dependencies:
+      '@wso2iam/test-ts-core':
+        specifier: workspace:^
+        version: link:../../packages/core
     devDependencies:
+      '@wso2iam/test-cypress-core':
+        specifier: workspace:*
+        version: link:../../packages/cypress
       cypress:
         specifier: ^14.0.1
         version: 14.0.1

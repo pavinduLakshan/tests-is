@@ -2,10 +2,8 @@
   "name": "@wso2iam/test-cypress-core",
   "version": "1.0.0",
   "description": "Cypress utilities for implementing tests for the WSO2 IAM platform",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build tsconfig.json",
     "clean": "rm -rf node_modules dist"
   },
   "keywords": [],
@@ -16,11 +14,5 @@
   },
   "dependencies": {
     "cypress": "^14.0.1"
-  },
-  "exports": {
-    "./configs/cypress-task-configs": "./dist/configs/cypress-task-configs.js",
-    "./configs/environment-config": "./dist/configs/environment-config.js",
-    "./constants/cypress-keywords": "./dist/constants/cypress-keywords.js",
-    "./utils": "./dist/utils.js"
   }
 }

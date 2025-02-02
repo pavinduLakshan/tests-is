@@ -2,10 +2,8 @@
   "name": "@wso2iam/test-ts-core",
   "version": "1.0.0",
   "description": "Common TypeScript utilities for implementing tests for the WSO2 IAM platform",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build tsconfig.json",
     "clean": "rm -rf node_modules dist"
   },
   "keywords": [],
@@ -16,5 +14,8 @@
   },
   "dependencies": {
     "@wso2/identity-cypress-test-base": "^0.2.32"
+  },
+  "exports": {
+    ".": "./dist"
   }
 }
