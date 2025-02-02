@@ -16,8 +16,6 @@
  * under the License.
  */
 
-/// <reference types="cypress" />
-
 /**
  * Class containing getters to retrieve Environment Configurations.
  */

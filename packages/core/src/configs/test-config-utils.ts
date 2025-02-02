@@ -16,8 +16,6 @@
  * under the License.
  */
 
-/// <reference types="cypress" />
-
 import { AsgardeoEndPointsConstants } from "../constants/endpoint-constants/asgardeo-endpoints-constants";
 import { ApplicationConfigurationInterface } from "../models";
 

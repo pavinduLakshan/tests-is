@@ -16,5 +16,11 @@
   },
   "dependencies": {
     "cypress": "^14.0.1"
+  },
+  "exports": {
+    "./configs/cypress-task-configs": "./dist/configs/cypress-task-configs.js",
+    "./configs/environment-config": "./dist/configs/environment-config.js",
+    "./constants/cypress-keywords": "./dist/constants/cypress-keywords.js",
+    "./utils": "./dist/utils.js"
   }
 }

@@ -7,16 +7,14 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import { EnvironmentConfig } from "../../../configs";
-
 export class OrgInsightsConstants {
     public static readonly ORG_INSIGHTS_PAGE_TITLE: string = "Insights";
 
     public static readonly ORG_INSIGHTS_PAGE_SUBTITLE: string = 
         "Understand user behavior better with usage statistics.";
 
-    public static getInsightsEndpoint(): string {
-        return EnvironmentConfig.getServerOrigin() + EnvironmentConfig.getTenantPath() 
+    public static getInsightsEndpoint(serverOrigin: string, tenantPath: string): string {
+        return serverOrigin + tenantPath 
         + "api/asgardeo/insights/v1/user";
     }
     public static readonly ORG_INSIGHTS_PRIMARY_USERSTRORE_FILTER_EXPRESSION: string = "userstoreDomain+eq+PRIMARY";
