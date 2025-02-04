@@ -124,8 +124,7 @@ export class ProductConfig {
      * Returns the application console configurations
      * @return { appName: string; endPoint: string }
      */
-    public static getAppConsoleConfig(): ConsoleConfigInterface {
-        const appBaseName: string = "app/";
+    public static getAppConsoleConfig(appBaseName: string): ConsoleConfigInterface {
 
         return {
             appName: "console",

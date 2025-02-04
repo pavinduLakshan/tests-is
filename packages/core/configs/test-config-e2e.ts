@@ -42,7 +42,7 @@ export class TestE2EConfig {
         "user-onboard/e2e_check_claim_unique_user_data.json";
         
     public static readonly spAppCreationPayload: string =
-        "application-management-input-data/e2e-single-page-app-payload.json";
+        "application-management/single-page-app-create-payload.json";
     public static readonly oidcWebAppCreationPayload: string =
         "application-management-input-data/e2e-oidc-web-app-payload.json";
     public static readonly choreoAuthScriptTestData: string = "choreo_authentication_script.txt";
