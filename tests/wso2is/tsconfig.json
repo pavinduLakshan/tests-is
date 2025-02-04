@@ -15,22 +15,41 @@
           "es6",
       ],
       "outDir": "dist",
+      "paths": {
+          "*": ["types/*"],
+          "@wso2/identity-cypress-test-base/api": ["node_modules/@wso2/identity-cypress-test-base/dist/api/commands"],
+          "@wso2/identity-cypress-test-base/ui": ["node_modules/@wso2/identity-cypress-test-base/dist/ui"]
+      },
       "target": "es5",
       "types": [
           "cypress",
-          "node"
-       ],
+          "node",
+          "./types"
+      ],
       "sourceMap": false
   },
   "include": [
       "cypress/e2e",
+      "cypress/regression-test",
       "cypress/fixtures",
-      "cypress/support"
+      "cypress/page-objects",
+      "cypress/plugins",
+      "cypress/support",
+      "cypress/smoke-testing"
   ],
   "compileOnSave": false,
   "exclude": [
       "node_modules",
+      "org.wso2.iam.cloud.sample-application",
       "cypress/reports",
-      "logs"
+      "logs",
+      "*.test.js",
+      "*.test.jsx",
+      "*.test.ts",
+      "*.test.tsx",
+      "*.spec.js",
+      "*.spec.jsx",
+      "*.spec.ts",
+      "*.spec.tsx"
   ]
 }

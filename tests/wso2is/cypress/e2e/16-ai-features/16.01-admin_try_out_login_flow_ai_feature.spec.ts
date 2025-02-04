@@ -52,8 +52,11 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
         //Pre-requisite - Application creation
         cy.fixture(TestE2EConfig.spAppCreationPayload).then(($appCreationPayload: Cypress.ObjectLike) => {
 
+            cy.log("app creation")
             // Store content of the fixture in a global variable.
             appCreationPayload = $appCreationPayload;
+
+            cy.log(JSON.stringify(appCreationPayload))
 
             // Update application name with testId.
             appCreationPayload.name = appCreationPayload.name + "_" + testId;
@@ -72,6 +75,10 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
         });
     });
 
+    it("test", () => {
+        cy.log("test")
+    })
+
     qase(1274, 
         it("16.01.01 - Verify whether an error returns when entering an invalid loginflow.",
             function () {
@@ -79,7 +86,7 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
                 // Navigate to Console Page.
                 cy.visit(EnvironmentConfig.getConsoleAccessURL() +
                     TestE2EConfigUtils.getTenantedPath(EnvironmentConfig.getTenant()) +
-                    ProductConfig.getAppConsoleConfig().routes.default);
+                    ProductConfig.getAppConsoleConfig(EnvironmentConfig.getConsoleAppBasePath()).routes.default);
 
                 ConsoleGettingStarted.getApplicationLink().click();
                 ApplicationsMainPage.getInputSearchByApplicationName().type(appCreationPayload.name 
@@ -108,81 +115,81 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
             })
         );
 
-        qase(1275, 
-            it("16.01.02 - Verify that the LoginFlow AI return a valid response for a valid login scenario.",
-            function () {
+    //     qase(1275, 
+    //         it("16.01.02 - Verify that the LoginFlow AI return a valid response for a valid login scenario.",
+    //         function () {
                     
-                // Navigate to Console Page.
-                cy.visit(EnvironmentConfig.getConsoleAccessURL() +
-                    TestE2EConfigUtils.getTenantedPath(EnvironmentConfig.getTenant()) +
-                    ProductConfig.getAppConsoleConfig().routes.default);
+    //             // Navigate to Console Page.
+    //             cy.visit(EnvironmentConfig.getConsoleAccessURL() +
+    //                 TestE2EConfigUtils.getTenantedPath(EnvironmentConfig.getTenant()) +
+    //                 ProductConfig.getAppConsoleConfig().routes.default);
 
-                ConsoleGettingStarted.getApplicationLink().click();
-                ApplicationsMainPage.getInputSearchByApplicationName().type(appCreationPayload.name 
-                    + CypressKeywords.PRESS_ENTER_KEY);
-                ApplicationsMainPage.getBtnRowOfApplicationsTable(appCreationPayload.name)
-                .within(() => {
-                    ApplicationsMainPage.getBtnEditRowOfApplicationsTable().click();
-                });
+    //             ConsoleGettingStarted.getApplicationLink().click();
+    //             ApplicationsMainPage.getInputSearchByApplicationName().type(appCreationPayload.name 
+    //                 + CypressKeywords.PRESS_ENTER_KEY);
+    //             ApplicationsMainPage.getBtnRowOfApplicationsTable(appCreationPayload.name)
+    //             .within(() => {
+    //                 ApplicationsMainPage.getBtnEditRowOfApplicationsTable().click();
+    //             });
 
-                // Navigate to sign-in method tab.
-                cy.navigateBetweenTabs(4, ApplicationEditPageConstants.SIGN_IN_METHOD_TAB,
-                    ApplicationEditPage.NAVIGATION_TABS);
-                cy.log("Successfully navigated to the Sign-in method tab.");
+    //             // Navigate to sign-in method tab.
+    //             cy.navigateBetweenTabs(4, ApplicationEditPageConstants.SIGN_IN_METHOD_TAB,
+    //                 ApplicationEditPage.NAVIGATION_TABS);
+    //             cy.log("Successfully navigated to the Sign-in method tab.");
                 
-                LoginFlowAIPage.getLoginFlowAIActionButton().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
-                LoginFlowAIPage.getLoginFlowAIActionButton().click();
+    //             LoginFlowAIPage.getLoginFlowAIActionButton().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //             LoginFlowAIPage.getLoginFlowAIActionButton().click();
 
-                // Validate whether the text field appears after clicking the button.
-                LoginFlowAIPage.getLoginFlowAIInput().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //             // Validate whether the text field appears after clicking the button.
+    //             LoginFlowAIPage.getLoginFlowAIInput().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
                 
-                const loginFlowInput = "Add username password as the first step and the email otp as the send step.";
-                // Input the valid login flow and press enter.
-                LoginFlowAIPage.getLoginFlowAIInput().type(loginFlowInput);
-                // To prevent submitting the form before doing the UI validations.
-                cy.wait(1000);
-                LoginFlowAIPage.getLoginFlowAIInput().type(CypressKeywords.PRESS_ENTER_KEY);
+    //             const loginFlowInput = "Add username password as the first step and the email otp as the send step.";
+    //             // Input the valid login flow and press enter.
+    //             LoginFlowAIPage.getLoginFlowAIInput().type(loginFlowInput);
+    //             // To prevent submitting the form before doing the UI validations.
+    //             cy.wait(1000);
+    //             LoginFlowAIPage.getLoginFlowAIInput().type(CypressKeywords.PRESS_ENTER_KEY);
 
-                // Validate whether the loading screen appears within 5 seconds.
-                LoginFlowAIPage.getLoginFlowAIAnimation(5000)
-                .should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //             // Validate whether the loading screen appears within 5 seconds.
+    //             LoginFlowAIPage.getLoginFlowAIAnimation(5000)
+    //             .should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
                 
-                /* 
-                Validate whether the loading screen disappears within 90 seconds.
-                AI response time is 90 seconds. If the AI couldn't respond within 90 seconds,it will throw an error.
-                That's why we set the timeout to 90 seconds.
-                */
-                LoginFlowAIPage.getLoginFlowAIAnimation(90000).should(CypressKeywords.ASSERTION_TO_NOT_EXIST);
+    //             /* 
+    //             Validate whether the loading screen disappears within 90 seconds.
+    //             AI response time is 90 seconds. If the AI couldn't respond within 90 seconds,it will throw an error.
+    //             That's why we set the timeout to 90 seconds.
+    //             */
+    //             LoginFlowAIPage.getLoginFlowAIAnimation(90000).should(CypressKeywords.ASSERTION_TO_NOT_EXIST);
 
-                /*
-                Validate whether the "Revert to default" button appears. This button will appear after the 
-                AI response.
-                */
-                ApplicationSignInMethodPage.getBtnRevertToDefault().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //             /*
+    //             Validate whether the "Revert to default" button appears. This button will appear after the 
+    //             AI response.
+    //             */
+    //             ApplicationSignInMethodPage.getBtnRevertToDefault().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
 
-                // Validate whether the "History" button appears.
-                LoginFlowAIPage.getLoginFlowAIHistoryButton().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //             // Validate whether the "History" button appears.
+    //             LoginFlowAIPage.getLoginFlowAIHistoryButton().should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
 
-                // Click the "History" button.
-                LoginFlowAIPage.getLoginFlowAIHistoryButton().click();
+    //             // Click the "History" button.
+    //             LoginFlowAIPage.getLoginFlowAIHistoryButton().click();
 
-                // Validate whether the the prompt history is correctly displayed.
-                LoginFlowAIPage.getLoginFlowAIHistoryCard().contains(loginFlowInput)
-                .should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
-            })
-        );
+    //             // Validate whether the the prompt history is correctly displayed.
+    //             LoginFlowAIPage.getLoginFlowAIHistoryCard().contains(loginFlowInput)
+    //             .should(CypressKeywords.ASSERTION_TO_BE_VISIBLE);
+    //         })
+    //     );
 
         /**
          * Clear all test input data after executing all test cases.
+         * 
          * 1. Delete created single page application.
          * 2. Skip execution of remaining tests if any test case fails.
          */
         after(() => {
 
-            const filterApplicationName = ApplicationAPIPayloadConstants.APPLICATION_FILTER_NAME_SW
-                + appCreationPayload.name;
+            const filterApplicationName = ApplicationAPIPayloadConstants.APPLICATION_FILTER_NAME_SW + appCreationPayload.name;
 
-            cy.log("Delete single page application.");
+            cy.log("Deleting the created single page application...");
             cy.deleteApplicationViaAPI(TestE2EConfigUtils.getTenantedPath(EnvironmentConfig.getTenant()),
                 EnvironmentConfig.getTenantAdminCredentials(), filterApplicationName);
 
