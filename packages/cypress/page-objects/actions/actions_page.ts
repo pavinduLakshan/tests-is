@@ -10,7 +10,7 @@
 
 /// <reference types="cypress" />
 
-import ActionsConstants from "../../constants/console/action-mgt/actions";
+import ActionsConstants from "@wso2iam/test-ts-core/constants/console/action-mgt/actions";
 
 const PRE_ISSUE_ACCESS_TOKEN_CARD = "[data-componentid=pre-issue-access-token-action-type-card]",
     PRE_UPDATE_PASSWORD_CARD = "[data-componentid=pre-update-password-action-type-card]",

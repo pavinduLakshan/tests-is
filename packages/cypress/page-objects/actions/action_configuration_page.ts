@@ -10,8 +10,8 @@
 
 /// <reference types="cypress" />
 
-import ActionsConstants from "../../constants/console/action-mgt/actions";
-import { HTMLKeyWordsConstants } from "../../constants/cypress-constants/html-keywords";
+import ActionsConstants from "@wso2iam/test-ts-core/constants/console/action-mgt/actions";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 const BACK_BUTTON = "[data-componentid=action-configuration-page-preIssueAccessToken-page-back-button]",
     ACTION_NAME = "[data-componentid=common-action-config-form-action-name]",

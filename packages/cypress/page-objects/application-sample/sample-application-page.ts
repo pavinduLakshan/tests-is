@@ -74,7 +74,7 @@ export class SampleApplicationPage {
      * This function returns the text of the login button on the sample app login page
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Login"
      */
-    public static getSampleLoginButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSampleLoginButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(SAMPLE_APP_LOGIN_BUTTON_TEXT);
     }
@@ -83,7 +83,7 @@ export class SampleApplicationPage {
      * This function returns the text of the login button on the sample app login page
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Sign In"
      */
-    public static getB2BSampleLoginButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleLoginButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_LOGIN_BUTTON_TEXT);
     }
@@ -92,7 +92,7 @@ export class SampleApplicationPage {
      * This function returns the text of the sign in button on the sample app sign in page
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Sign in with WSO2IS"
      */
-    public static getB2BSampleSignInButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleSignInButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_SIGN_IN_BUTTON_TEXT);
     }
@@ -110,7 +110,7 @@ export class SampleApplicationPage {
      * This function returns the text of the Settings button on the sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Settings"
      */
-    public static getB2BSampleSettingsButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleSettingsButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_SETTINGS_BUTTON_TEXT);
     }
@@ -119,7 +119,7 @@ export class SampleApplicationPage {
      * This function returns the text of the Dashboard button on the sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Dashboard"
      */
-    public static getB2BSampleDashboardButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleDashboardButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_DASHBOARD_BUTTON_TEXT);
     }
@@ -137,7 +137,7 @@ export class SampleApplicationPage {
      * This function returns the text of the add idp button on the sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Add Identity Provider"
      */
-    public static getB2BSampleAddIdpButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleAddIdpButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_ADD_IDP_BUTTON_TEXT);
     }
@@ -146,7 +146,7 @@ export class SampleApplicationPage {
      * This function returns the text of the add enterprise idp button on the sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} The element that contains the text "Enterprise"
      */
-    public static getB2BSampleAddEnterpriseIdpButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleAddEnterpriseIdpButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_ENTERPRISE_IDP_BUTTON_TEXT);
     }
@@ -239,7 +239,7 @@ export class SampleApplicationPage {
      * This function returns the text enterprise idp add to login flow success message on the sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getB2BSampleAddEnterpriseIdpToLoginFlowSuccessAlert(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleAddEnterpriseIdpToLoginFlowSuccessAlert(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_ADD_IDP_ALERT_SUCCESS_TEXT);
     }
@@ -248,7 +248,7 @@ export class SampleApplicationPage {
      * This function returns a cypress chainable object that contains the sample app sign out button
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getB2BSampleSignOutButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getB2BSampleSignOutButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(B2B_SAMPLE_APP_SIGN_OUT_BUTTON);
     }
@@ -267,7 +267,7 @@ export class SampleApplicationPage {
      * This function returns a cypress chainable object that contains the sample app logout button
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getSampleLogoutButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSampleLogoutButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(SAMPLE_APP_LOGOUT_BUTTON_TXT);
     }
@@ -276,7 +276,7 @@ export class SampleApplicationPage {
      * This function returns the title of the react sample app header.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>} 
      */
-    public static getReactSampleHeaderTitle(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getReactSampleHeaderTitle(): Cypress.Chainable<undefined> {
 
         return cy.contains(REACT_SAMPLE_APP_HEADER_TITLE);
     }

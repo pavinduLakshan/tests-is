@@ -17,7 +17,7 @@ const
     BTN_IGNORE_SUBSCRIBE= "[data-componentid=marketing-consent-modal-decline-btn]";
 
 // LOGOUT LOCATORS
-const LOGOUT_BUTTON = "app-header-dropdown-link-";
+const LOGOUT_BUTTON = "[data-testid=\"app-header-dropdown-link-\"]";
 
 //ALERT MESSAGES
 const ALERT_SUCCESS = "[data-testid=\"alert-success-message\"]";
@@ -33,18 +33,18 @@ export class CommonLandingPage {
      * Get the header avatar
      * @returns {Cypress.Chainable<Element>}
      */
-    public static getHeaderAvatarIcon(): Cypress.Chainable<Element> {
+    public static getHeaderAvatarIcon(): Cypress.Chainable<JQuery<HTMLElement>> {
 
-        return cy.dataTestId(LNK_TERMS_OF_SERVICES);
+        return cy.get(LNK_TERMS_OF_SERVICES);
     }
 
     /**
      * Get the logout btn
      * @returns {Cypress.Chainable<Element>}
      */
-    public static getLogoutBtn(): Cypress.Chainable<Element> {
+    public static getLogoutBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
 
-        return cy.dataTestId(LOGOUT_BUTTON);
+        return cy.get(LOGOUT_BUTTON);
     }
 
     /**

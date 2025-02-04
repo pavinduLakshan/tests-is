@@ -20,7 +20,7 @@ export class B2BAdminAppLoginPage {
      * This function returns the text of the login button on the sample app login page.
      * @returns The element that contains the text "Sign In"
      */
-    public static getLoginButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getLoginButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(LOGIN_BUTTON_TEXT);
     }
@@ -29,7 +29,7 @@ export class B2BAdminAppLoginPage {
      * This function returns the text of the sign in button on the sample app sign in page.
      * @returns The element that contains the text "Sign in with WSO2ISAdmin"
      */
-    public static getSignInButtonTxt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSignInButtonTxt(): Cypress.Chainable<undefined> {
 
         return cy.contains(SIGN_IN_BUTTON_TEXT);
     }

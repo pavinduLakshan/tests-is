@@ -6,7 +6,7 @@
  * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
-import {CypressKeywords} from "../../../constants";
+import {CypressKeywords} from "../../../constants/cypress-keywords";
 
 /// <reference types="Cypress" />
 
@@ -58,7 +58,7 @@ export class B2BAdminAppIdentityProvidersPage {
      * This function returns the enterprise option in the select identity provider popup.
      * @returns The "Enterprise" option in the "Select Identity Provider" popup.
      */
-    public static getAddEnterpriseIdpButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getAddEnterpriseIdpButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(BTN_ENTERPRISE_IDP);
     }

@@ -31,7 +31,7 @@ export class B2BBusinessAppLandingPage {
      * This function returns the sample app sign out button.
      * @returns The sign out button.
      */
-    public static getSignOutButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSignOutButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(BTN_SIGN_OUT);
     }

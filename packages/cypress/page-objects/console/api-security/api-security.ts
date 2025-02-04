@@ -7,7 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import { HTMLKeyWordsConstants } from "../../../constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
  // ADD API RESOURCE LOCATORS
  const
@@ -335,7 +335,7 @@ export class APISecurityPage {
      * tab.
      * @returns A chainable object of type JQuery<HTMLElement>
      */
-    public static getPermissionTabButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getPermissionTabButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(HTMLKeyWordsConstants.HTML_ANCHOR_TAG, PERMISSION_TAB_ANCHOR);
     }

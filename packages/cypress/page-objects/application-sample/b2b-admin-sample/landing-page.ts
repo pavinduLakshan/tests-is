@@ -52,7 +52,7 @@ export class B2BAdminAppLandingPage {
      * This function returns the settings button.
      * @returns The element that contains the text "Settings"
      */
-    public static getSettingsButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSettingsButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(DROPDOWN_ITEM_SETTINGS_TEXT);
     }
@@ -61,7 +61,7 @@ export class B2BAdminAppLandingPage {
      * This function returns the sample app sign out button.
      * @returns The sign out button.
      */
-    public static getSignOutButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSignOutButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(BTN_SIGN_OUT);
     }
