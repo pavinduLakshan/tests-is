@@ -65,6 +65,25 @@ export class EnvironmentConfig {
         return Cypress.env("serverOrigin");
     }
 
+    public static getISClientId(): string {
+        return Cypress.env("clientId")
+    }
+
+    public static getISClientSecret(): string {
+        return Cypress.env("clientSecret")
+    }
+
+    /**
+     * Returns the console app base path
+     * ex: app/
+     *
+     * @return {string}
+     */
+    public static getConsoleAppBasePath(): string {
+
+        return Cypress.env("consoleAppBasePath");
+    }
+
     /**
      * Returns the cross region server origin.
      * ex: https://dev.accounts.asgardeo.io/
