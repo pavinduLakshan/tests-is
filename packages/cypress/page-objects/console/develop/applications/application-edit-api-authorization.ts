@@ -9,7 +9,7 @@
 
 /// <reference types="Cypress" />
 
-import { ApplicationEditPageConstants } from "../../../../constants";
+import { ApplicationEditPageConstants } from "@wso2iam/test-ts-core";
 
 // Locators - Application Edit Page - API Authorization Tab
 const AUTHORIZE_API_RESOURCE_BTN = 

@@ -7,10 +7,8 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import {
-    CypressKeywords,
-    HTMLKeyWordsConstants
-} from "../../../constants";
+import { CypressKeywords } from "../../../constants/cypress-keywords";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core";
 
 /**
  * Define the ValueOf type.
@@ -130,7 +128,7 @@ export class UserProfilePage {
      * Get the email addresses input field.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getEmailAddressesFiledInput(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getEmailAddressesFiledInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         return cy.get(EMAIL_ADDRESSES_FIELD).find(HTMLKeyWordsConstants.INPUT_FIELD);
     }
@@ -139,7 +137,7 @@ export class UserProfilePage {
      * Get the email addresses add button.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getEmailAddressesFieldAddButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getEmailAddressesFieldAddButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.get(EMAIL_ADDRESSES_FIELD).find(HTMLKeyWordsConstants.HTML_BUTTON);
     }
@@ -189,7 +187,7 @@ export class UserProfilePage {
      * Get the mobile numbers input field.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getMobileNumbersFiledInput(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getMobileNumbersFiledInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         return cy.get(MOBILE_NUMBERS_FIELD).find(HTMLKeyWordsConstants.INPUT_FIELD);
     }
@@ -198,7 +196,7 @@ export class UserProfilePage {
      * Get the mobile numbers add button.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getMobileNumbersFieldAddButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getMobileNumbersFieldAddButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.get(MOBILE_NUMBERS_FIELD).find(HTMLKeyWordsConstants.HTML_BUTTON);
     }

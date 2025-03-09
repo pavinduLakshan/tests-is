@@ -9,7 +9,7 @@
 
 /// <reference types="Cypress" />
 
-import { HTMLKeyWordsConstants } from "../../../../constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // Locators - Main Page
 const TXT_TITLE = "[data-testid=\"applications-page-layout-page-header-title\"]";
@@ -104,7 +104,7 @@ export class ApplicationsMainPage {
      * Get the input field for my account url for users
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getTxtMyAccountUrlForUsers(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTxtMyAccountUrlForUsers(): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         return cy.get(WRAPPER_MY_ACCOUNT_URL_FOR_USERS).find("input");
 
@@ -114,7 +114,7 @@ export class ApplicationsMainPage {
      * Get the copy to clipboard button for my account url for users
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getBtnCopyMyAccountUrlForUsers(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getBtnCopyMyAccountUrlForUsers(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.get(WRAPPER_MY_ACCOUNT_URL_FOR_USERS).find("button");
 
@@ -124,7 +124,7 @@ export class ApplicationsMainPage {
      * Get the input field for searching by application name
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getInputSearchByApplicationName(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getInputSearchByApplicationName(): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         return cy.get(INPUT_SEARCH_BY_APPLICATION_NAME).find("input");
 
@@ -193,7 +193,7 @@ export class ApplicationsMainPage {
      * @param {string} appName - application name
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getBtnRowOfApplicationsTable(appName: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getBtnRowOfApplicationsTable(appName: string): Cypress.Chainable<JQuery<HTMLTableRowElement>> {
 
         return cy.get(TABLE_APPLICATIONS).contains("tr", appName);
 
@@ -297,7 +297,7 @@ export class ApplicationsMainPage {
     /**
      * This function returns the error prompt in application page
      */
-    public static getErrorPrompt(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getErrorPrompt(): Cypress.Chainable<JQuery<HTMLParagraphElement>> {
 
         return cy.get(ERROR_PROMPT).find(HTMLKeyWordsConstants.HTML_PARAGRAPH);
     }

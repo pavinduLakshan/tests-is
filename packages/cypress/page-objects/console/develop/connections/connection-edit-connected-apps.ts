@@ -9,7 +9,7 @@
 
 /// <reference types="Cypress" />
 
-import { HTMLKeyWordsConstants } from "../../../../constants/cypress-constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // Locators - Connected Apps Edit Page
 const EMPTY_PLACEHOLDER_TITLE: string = "[data-testid=\"empty-placeholder-sub-header-line-0\"]";  
@@ -65,7 +65,7 @@ export class ConnectionsConnectedAppsPage {
      * @param {string} appName - application name
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getBtnRowOfConnectedApplicationsTable(appName: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getBtnRowOfConnectedApplicationsTable(appName: string): Cypress.Chainable<JQuery<HTMLTableRowElement>> {
         
         return cy.get(TABLE_CONNECTED_APPLICATIONS).contains(HTMLKeyWordsConstants.HTML_TABLE_ROW, appName);
     }

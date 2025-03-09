@@ -11,6 +11,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@wso2/identity-cypress-test-base": "^0.2.32",
     "@wso2iam/test-ts-core": "workspace:*",
     "cypress": "^14.0.1"
   }

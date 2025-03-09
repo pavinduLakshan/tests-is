@@ -9,7 +9,7 @@
 
 /// <reference types="Cypress" />
 
-import { HTMLKeyWordsConstants } from "../../../../constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // Locators - Application Edit Page
 const TXT_APP_EDIT_PAGE_TITLE: string = "[data-componentid=\"application-edit-page-layout-page-header-title\"]";
@@ -45,7 +45,7 @@ export class ApplicationEditPage {
      * @param {string} tabName - tab
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getNavigationTab(tabName: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getNavigationTab(tabName: string): Cypress.Chainable<JQuery<HTMLAnchorElement>> {
 
         return cy.get(this.NAVIGATION_TABS).contains("a", tabName);
 
@@ -85,7 +85,7 @@ export class ApplicationEditPage {
      * @param {string} shareType - tab
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getRadioShareWithAllSubOrgs(shareType: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getRadioShareWithAllSubOrgs(shareType: string): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         cy.get(RADIO_SHARE_WITH_ALL_SUB_ORGS).should(($element) => {
 
@@ -106,7 +106,7 @@ export class ApplicationEditPage {
      * @param {string} shareType - tab
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getRadioShareWithAllSubOrgsEnabledState(shareType: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getRadioShareWithAllSubOrgsEnabledState(shareType: string): Cypress.Chainable<JQuery<HTMLLabelElement>> {
 
         cy.get(RADIO_SHARE_WITH_ALL_SUB_ORGS).should(($element) => {
 

@@ -1,13 +1,22 @@
 /**
- * Copyright (c) 2022-2024, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
+ * Copyright (c) 2025, WSO2 LLC. (https://www.wso2.com).
  *
- * This software is the property of WSO2 LLC. and its suppliers, if any.
- * Dissemination of any information or reproduction of any material contained
- * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
- * You may not alter or remove any copyright or other notice from copies of this content."
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
  */
 
- import { HTMLKeyWordsConstants, UserStoreConstants } from "../../../constants";
+import { HTMLKeyWordsConstants, UserStoreConstants } from "@wso2iam/test-ts-core";
 
 // ADD USER STORE LOCATORS 
 const 
@@ -236,7 +245,7 @@ export class UserStoreManagerPage {
      * It returns a Cypress chainable object that represents the General anchor.
      * @returns A chainable object of type JQuery<HTMLElement>
      */
-    public static getGeneralTabButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getGeneralTabButton(): Cypress.Chainable<JQuery<HTMLAnchorElement>> {
 
         return cy.contains(HTMLKeyWordsConstants.HTML_ANCHOR_TAG, GENERAL_ANCHOR);
     }
@@ -308,7 +317,7 @@ export class UserStoreManagerPage {
      * It returns a Cypress chainable object that represents the attribute mappings anchor.
      * @returns A chainable object of type JQuery<HTMLElement>
      */
-    public static getAttributeMappingsTabButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getAttributeMappingsTabButton(): Cypress.Chainable<JQuery<HTMLAnchorElement>> {
 
         return cy.contains(HTMLKeyWordsConstants.HTML_ANCHOR_TAG, ATTRIBUTE_MAPPING_ANCHOR);
     }
@@ -317,7 +326,7 @@ export class UserStoreManagerPage {
      * It returns a Cypress chainable object that represents the attribute mappings anchor.
      * @returns A chainable object of type JQuery<HTMLElement>
      */
-    public static getSetupGuideTabButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getSetupGuideTabButton(): Cypress.Chainable<JQuery<HTMLAnchorElement>> {
 
         return cy.contains(HTMLKeyWordsConstants.HTML_ANCHOR_TAG, SETUP_GUIDE_ANCHOR);
     }
@@ -353,7 +362,7 @@ export class UserStoreManagerPage {
      *  It returns a Cypress chainable object that represents the generate token button.
      * @returns A chainable object of type JQuery<HTMLElement>
      */
-    public static getGenerateTokenButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getGenerateTokenButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.contains(HTMLKeyWordsConstants.HTML_BUTTON, UserStoreConstants.GENERATE_TOKEN_TEXT);
     }

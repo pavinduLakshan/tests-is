@@ -7,7 +7,7 @@
  * You may not alter or remove any copyright or other notice from copies of this content."
  */
 
-import { HTMLKeyWordsConstants } from "../../../constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // PAGE LOCATORS
 const BUTTON_CONNECT_APPLICATION = "[data-testid=\"develop-getting-started-page-register-application-button\"]",
@@ -27,13 +27,11 @@ const BUTTON_CONNECT_APPLICATION = "[data-testid=\"develop-getting-started-page-
     LNK_ACTIONS = "[data-componentid=side-panel-items-actions]",
     LNK_SMS_TEMPLATES = "[data-componentid=side-panel-items-sms-templates]",
     TAB_SECTION = "div[class=\"ui inner-menu menu\"]",
-    DEVELOP_SECTION_DEFAULT_LANDING_PAGE_HEADER = "[data-testid=applications-page-layout-page-header-title]",
     MANAGE_SECTION_DEFAULT_LANDING_PAGE_HEADER = "[data-testid=side-panel-items-users]",
     USER_DROP_DOWN = "[data-testid=app-header-user-avatar]",
     LINK_ROLE = "[data-testid=side-panel-items-user-roles]",
     BTN_LOGOUT = "Logout",
     BTN_MYACCOUNT = "[data-testid=app-switch-myaccount]",
-    HEADER_AVATAR_ICON = "[data-componentid=\"app-header-user-avatar\"]",
     HEADER_AVATAR_ICON_CONTAINER = "[data-testid='app-header-user-avatar']",
     ORGANIZATION_SWITCH_BREADCRUMB_ORG = "[data-componentid=\"organization-switch-breadcrumb-breadcrumb-item-",
     ORGANIZATION_SWITCH_DROPDOWN = "[data-componentid=\"tenant-dropdown\"]",
@@ -276,7 +274,7 @@ export class ConsoleGettingStarted {
      * It returns a Cypress chainable object that represents the logout button
      * @returns A chainable object that can be used to interact with the DOM element.
      */
-    public static getLogoutBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getLogoutBtn(): Cypress.Chainable<undefined> {
 
         return cy.contains(BTN_LOGOUT);
     }
@@ -399,7 +397,7 @@ export class ConsoleGettingStarted {
      * The link is available only when creating the TryIt app for the first time
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getTryItUserCreateLink(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTryItUserCreateLink(): Cypress.Chainable<undefined> {
 
         return cy.contains(LNK_CREATE_TRYIT_USER);
     }
@@ -453,7 +451,7 @@ export class ConsoleGettingStarted {
      * This function returns the welcome message text on the TryIt sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getTryItAppWelcomeMessage(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTryItAppWelcomeMessage(): Cypress.Chainable<JQuery<HTMLParagraphElement>> {
 
         return cy.get(LBL_TRYIT_APP_WELCOME).children("p");
     }
@@ -471,7 +469,7 @@ export class ConsoleGettingStarted {
      * This function returns the signout message text on the TryIt sample app
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getTryItAppLoggedOutMessage(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTryItAppLoggedOutMessage(): Cypress.Chainable<JQuery<HTMLParagraphElement>> {
 
         return cy.get(LBL_TRYIT_APP_LOGGED_OUT).children("p");
     }

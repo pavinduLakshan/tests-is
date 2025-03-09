@@ -9,7 +9,7 @@
 
 /// <reference types="Cypress" />
 
-import { HTMLKeyWordsConstants } from "../../../../constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // Locators - Application Edit Page - Protocol Tab
 const WRAPPER_OIDC_CLIENT_ID =

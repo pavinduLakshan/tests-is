@@ -10,7 +10,7 @@
 
 /// <reference types="Cypress" />
 
-import { HTMLKeyWordsConstants } from "../../../../constants/cypress-constants";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 // Page element locators
 const NAVIGATION_TABS: string = "[data-testid=\"idp-edit-page-resource-tabs\"]",
@@ -57,7 +57,7 @@ export class IdpEditPage {
      * @param {string} tabName - tab
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getNavigationTab(tabName: string): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getNavigationTab(tabName: string): Cypress.Chainable<JQuery<HTMLAnchorElement>> {
         
         return cy.get(NAVIGATION_TABS).contains(HTMLKeyWordsConstants.HTML_ANCHOR_TAG, tabName);
     }

@@ -42,6 +42,9 @@ importers:
 
   packages/cypress:
     dependencies:
+      '@wso2/identity-cypress-test-base':
+        specifier: ^0.2.32
+        version: 0.2.32
       '@wso2iam/test-ts-core':
         specifier: workspace:*
         version: link:../core
