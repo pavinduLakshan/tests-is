@@ -9,8 +9,8 @@
 
 /// <reference types="cypress" />
 
-import { CustomTimeoutConfigs } from "../../configs";
-import { HTMLKeyWordsConstants } from "../../constants";
+import { CustomTimeoutConfigs } from "@wso2iam/test-ts-core/configs";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core/constants";
 
 //Locators
 const TXT_SECURITY_TITLE = "[data-testid=page-layout-page-header-title]",
@@ -329,7 +329,7 @@ export class AccountSecurityPage {
      * It returns a JQuery object that represents the div element that contains the QR code model.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getQrCodeModelDiv(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getQrCodeModelDiv(): Cypress.Chainable<JQuery<HTMLDivElement>> {
 
         return cy.get(QR_CODE_MODEL_DIV).find(HTMLKeyWordsConstants.HTML_DIV);
     }
@@ -366,7 +366,7 @@ export class AccountSecurityPage {
      * successfully authenticated with TOTP
      * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
      */
-    public static getTOTPConfigurationMessageModalButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTOTPConfigurationMessageModalButton(): Cypress.Chainable<undefined>{
 
         return cy.contains(SUCCESSFULLY_AUTHENTICATED_MODEL_BUTTON);
     }

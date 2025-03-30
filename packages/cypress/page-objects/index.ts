@@ -11,7 +11,6 @@ export * from "./console";
 export * from "./myaccount";
 export * from "./accounts";
 export * from "./application-sample";
-export * from "./billing-portal";
 export * from "./ai";
 export * from "./authenticationendpoint";
 export * from "./actions";

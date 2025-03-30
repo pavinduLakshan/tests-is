@@ -53,7 +53,7 @@ export class MyAccountOverview{
     * To get My Account Personal Info tab
     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
     */    
-    public static getTabPersonalInfo(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getTabPersonalInfo(): Cypress.Chainable<undefined>{
         
         return cy.contains(PERSONAL_TAB_TXT);
     }

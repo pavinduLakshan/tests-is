@@ -9,10 +9,8 @@
  */
 
 
-import {
-    CypressKeywords,
-    HTMLKeyWordsConstants
-} from "../../constants";
+import { CypressKeywords } from "../../constants/cypress-keywords";
+import { HTMLKeyWordsConstants } from "@wso2iam/test-ts-core";
 
 // <reference types="cypress" />
 
@@ -242,7 +240,7 @@ export class MyAccountPersonalInfoPage {
      * This function returns the country input element
      * @returns {{Cypress.Chainable<JQuery<HTMLElement>>}}
      */
-    public static getCountryInput(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getCountryInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
 
         return cy.get(HTMLKeyWordsConstants.HTML_DIV).contains(COUNTRY_INPUT_LABEL).next()
             .find(HTMLKeyWordsConstants.INPUT_FIELD);
@@ -333,7 +331,7 @@ export class MyAccountPersonalInfoPage {
     * To get Profile Picture save button
     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
     */
-    public static getProfilePictureSaveButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getProfilePictureSaveButton(): Cypress.Chainable<undefined> {
 
         return cy.contains(SAVE_BUTTON);
     }
@@ -396,7 +394,7 @@ export class MyAccountPersonalInfoPage {
      * This function returns the mobile number add button.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getMobileNumbersAddButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getMobileNumbersAddButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.get(MOBILE_NUMBERS_FIELD).find(HTMLKeyWordsConstants.HTML_BUTTON);
     }
@@ -543,7 +541,7 @@ export class MyAccountPersonalInfoPage {
      * This function returns the email addresses field add button.
      * @returns {Cypress.Chainable<JQuery<HTMLElement>}
      */
-    public static getEmailAddressesAddButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    public static getEmailAddressesAddButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
 
         return cy.get(EMAIL_ADDRESSES_FIELD).find(HTMLKeyWordsConstants.HTML_BUTTON);
     }

@@ -15,12 +15,10 @@ const USERNAME_INPUT = "#usernameUserInput",
     BTN_SIGNIN = "login-page-continue-login-button",
     LBL_LOGIN_ERROR = "login-page-error-message",
     LNK_PRIVACY_POLICY = "Privacy Policy",
-    LNK_TERMS_OF_SERVICES = "Terms of Service",
-    BTN_ACCEPT_COOKIE_POLICY= "[data-testid='cookie-consent-banner-confirm-button']";
+    LNK_TERMS_OF_SERVICES = "Terms of Service";
     
 // LOGOUT LOCATORS
-const HEADER_AVATAR_ICON = "[data-componentid=\"app-header-user-avatar\"]",
-    HEADER_AVATAR_ICON_CONTAINER = "[data-testid='app-header-user-avatar']",
+const HEADER_AVATAR_ICON_CONTAINER = "[data-testid='app-header-user-avatar']",
     LOGOUT_BUTTON = "Logout";
       
 export class MyAccountLandingPage {
@@ -94,7 +92,7 @@ export class MyAccountLandingPage {
      * This function returns the logout button element
      * @returns {Cypress.Chainable<Element>}
      */
-    public static getLogoutBtn(): Cypress.Chainable<Element> {
+    public static getLogoutBtn(): Cypress.Chainable<undefined> {
 
         return cy.contains(LOGOUT_BUTTON);
     }
