@@ -2,11 +2,12 @@
 
 import { EnvironmentConfig } from "@wso2iam/test-cypress-core/configs/environment-config";
 import { BasicAuthCredentials } from "../../models";
-import { APIKeywords, ApplicationAPIPayloadConstants, AsgardeoEndPointsConstants, StatusCodeConstants } from "@wso2iam/test-ts-core/constants";
+import { APIKeywords, ApplicationAPIPayloadConstants, AsgardeoEndPointsConstants, HTMLKeyWordsConstants, StatusCodeConstants } from "@wso2iam/test-ts-core/constants";
 import { LoginPage } from "@wso2iam/test-cypress-core/page-objects/console/login/login-page";
 import { CypressKeywords } from "@wso2iam/test-cypress-core/constants/cypress-keywords";
 import { ProductConfig } from "@wso2iam/test-ts-core/configs/product-config";
 import { RequestContentTypes, RequestMethodTypes } from "@wso2iam/test-ts-core/models/console/request-method";
+import { ApplicationEditPage } from "@wso2iam/test-cypress-core/page-objects/console/develop/applications/application-edit";
 
 const constantApprovalType = "Approvealways";
 
@@ -163,9 +164,9 @@ Cypress.Commands.add('getAccessToken', (credentials: BasicAuthCredentials, tenan
     
     return cy.request({
         body: {
-          "client_id": EnvironmentConfig.getISClientId(),
-          "grant_type": ProductConfig.getGrantType().passwordGrantType,
-          "client_secret": EnvironmentConfig.getISClientSecret(),
+          "client_id": EnvironmentConfig.getClientId(),
+          "grant_type": ProductConfig.getGrantType().clientCredentialsGrantType,
+          "client_secret": EnvironmentConfig.getClientSecret(),
           "password": credentials.password,
           "scope": APIKeywords.SCOPE,
           "username": credentials.userName,
@@ -216,8 +217,19 @@ Cypress.Commands.add('validateApplicationExistence', (appName: string) => {
   
 })
 
-Cypress.Commands.add('navigateBetweenTabs', (tabId: number, sourceTab: string, destinationTab: string) => {
+Cypress.Commands.add('navigateBetweenTabs', (destinationTab: string) => {
   
+  cy.get(ApplicationEditPage.NAVIGATION_TABS).within(() => {
+
+    cy.get(HTMLKeyWordsConstants.HTML_ANCHOR_TAG).each(($el, index) => {
+        cy.wrap($el).invoke(CypressKeywords.INVOKE_TEXT).then((text) => {
+
+            if (text == destinationTab) {
+                cy.wrap($el).should(CypressKeywords.ASSERTION_TO_CONTAIN, destinationTab).click();
+            }
+        });
+    });
+});
 })
 
 Cypress.Commands.add('getBrandingPreference', (tenantPath: string, credentials: BasicAuthCredentials) => {

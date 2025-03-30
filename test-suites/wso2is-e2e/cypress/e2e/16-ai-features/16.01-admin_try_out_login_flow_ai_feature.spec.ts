@@ -18,10 +18,10 @@
 
 import { qase } from "cypress-qase-reporter/mocha";
 import { EnvironmentConfig } from "@wso2iam/test-cypress-core/configs";
-import { ProductConfig, TestE2EConfig, TestE2EConfigUtils } from "@wso2iam/test-ts-core"
+import { TestE2EConfig, TestE2EConfigUtils } from "@wso2iam/test-ts-core"
 import { ApplicationAPIPayloadConstants, ApplicationEditPageConstants } from "@wso2iam/test-ts-core/constants";
 import { CypressKeywords } from "@wso2iam/test-cypress-core/constants/cypress-keywords"
-import { ApplicationEditPage, ApplicationSignInMethodPage, ApplicationsMainPage, CommonLandingPage,
+import { ApplicationsMainPage, CommonLandingPage,
      ConsoleGettingStarted, LoginFlowAIPage } from "@wso2iam/test-cypress-core/page-objects";
 
 const skipTestInDev = EnvironmentConfig.isDevEnv() ? describe.skip : describe;     
@@ -75,18 +75,13 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
         });
     });
 
-    it("test", () => {
-        cy.log("test")
-    })
-
     qase(1274, 
         it("16.01.01 - Verify whether an error returns when entering an invalid loginflow.",
             function () {
-                    
+
                 // Navigate to Console Page.
-                cy.visit(EnvironmentConfig.getConsoleAccessURL() +
-                    TestE2EConfigUtils.getTenantedPath(EnvironmentConfig.getTenant()) +
-                    ProductConfig.getAppConsoleConfig(EnvironmentConfig.getConsoleAppBasePath()).routes.default);
+                cy.visit(
+                    EnvironmentConfig.getConsoleAccessURL());
 
                 ConsoleGettingStarted.getApplicationLink().click();
                 ApplicationsMainPage.getInputSearchByApplicationName().type(appCreationPayload.name 
@@ -97,8 +92,7 @@ skipTestInDev("16.01 - Admin configure a login flow with loginflow-AI feature.",
                 });
 
                 // Navigate to sign-in method tab.
-                cy.navigateBetweenTabs(4, ApplicationEditPageConstants.SIGN_IN_METHOD_TAB,
-                    ApplicationEditPage.NAVIGATION_TABS);
+                cy.navigateBetweenTabs(ApplicationEditPageConstants.SIGN_IN_METHOD_TAB);
                 cy.log("Successfully navigated to the Login Flow tab.");
                 // Click on the "Try Login Flow AI" button.
                 LoginFlowAIPage.getLoginFlowAIActionButton().click();

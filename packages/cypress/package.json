@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Cypress utilities for implementing tests for the WSO2 IAM platform",
   "main": "dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

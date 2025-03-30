@@ -65,11 +65,11 @@ export class EnvironmentConfig {
         return Cypress.env("serverOrigin");
     }
 
-    public static getISClientId(): string {
+    public static getClientId(): string {
         return Cypress.env("clientId")
     }
 
-    public static getISClientSecret(): string {
+    public static getClientSecret(): string {
         return Cypress.env("clientSecret")
     }
 
@@ -517,7 +517,7 @@ export class EnvironmentConfig {
      * Returns the client id of the email.
      * @returns {string}
      */
-    public static getClientId(): string {
+    public static getGmailClientId(): string {
 
         return Cypress.env("gmailAdminUserClientID");
     }
@@ -526,7 +526,7 @@ export class EnvironmentConfig {
      * Returns the client secret of the email.
      * @returns {string}
      */
-    public static getClientSecret(): string {
+    public static getGmailClientSecret(): string {
 
         return Cypress.env("gmailAdminUserClientSecret");
     }

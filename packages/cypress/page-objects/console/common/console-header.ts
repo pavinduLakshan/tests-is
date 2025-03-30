@@ -9,7 +9,7 @@
 
 /// <reference types="cypress" />
 
-import { ConsoleHeader as CommonConsoleHeader } from "@wso2/identity-cypress-test-base/";
+import { ConsoleHeader as CommonConsoleHeader } from "@wso2/identity-cypress-test-base/ui";
 import { ConsoleHeaderDomConstants } from "@wso2iam/test-ts-core/constants";
 
 /**

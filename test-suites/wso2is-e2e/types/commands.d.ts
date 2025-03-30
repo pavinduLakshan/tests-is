@@ -38,7 +38,7 @@ declare global {
         createApplicationViaAPI(tenantPath: string, credentials: BasicAuthCredentials, requestPayload: any): void;
         validateApplicationExistence(appName: string): void;
         getAccessToken(credentials: BasicAuthCredentials, tenantPath: string): Cypress.Chainable<Cypress.Response<any>>;
-        navigateBetweenTabs(tabId: number, sourceTab: string, destinationTab: string): void;
+        navigateBetweenTabs(destinationTab: string): void;
         getBrandingPreference(tenantPath: string, credentials: BasicAuthCredentials): Promise<any>;
         deleteBrandingPreference(tenantPath: string, credentials: BasicAuthCredentials): Promise<any>;
     }

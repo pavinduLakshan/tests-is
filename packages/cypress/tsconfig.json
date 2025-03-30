@@ -13,6 +13,10 @@
     },
     "exclude": [
         "node_modules", "mocha", "dist"
-    ]
+    ],
+    "paths": {
+      "@wso2/identity-cypress-test-base/api": ["node_modules/@wso2/identity-cypress-test-base/dist/api/commands"],
+      "@wso2/identity-cypress-test-base/ui": ["node_modules/@wso2/identity-cypress-test-base/dist/ui"]
+    },
   }
   
